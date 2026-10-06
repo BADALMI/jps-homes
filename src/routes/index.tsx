@@ -457,6 +457,7 @@ function Index() {
               </button>
             </div>
           </form>
+          </Reveal>
         </div>
       </section>
 
