@@ -377,6 +377,7 @@ function Index() {
       {/* Contact */}
       <section id="contact" className="border-t border-border bg-primary text-primary-foreground">
         <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2">
+          <Reveal>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-primary-foreground/70">
               Get in Touch
@@ -410,6 +411,8 @@ function Index() {
               </div>
             </div>
           </div>
+          </Reveal>
+          <Reveal delay={150}>
           <form
             className="rounded-xl bg-background p-6 text-foreground shadow-xl sm:p-8"
             onSubmit={(e) => e.preventDefault()}
