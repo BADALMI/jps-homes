@@ -401,9 +401,12 @@ function Index() {
                 <MapPin className="mt-0.5 h-5 w-5 shrink-0" />
                 <p>3/104 Viram Khand, Gomti Nagar, Lucknow, Uttar Pradesh</p>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone className="h-5 w-5 shrink-0" />
-                <p>+91 90000 00000</p>
+              <div className="flex items-start gap-3">
+                <Phone className="mt-1 h-5 w-5 shrink-0" />
+                <div>
+                  <p>+91 73552 23299</p>
+                  <p>+91 96963 32889</p>
+                </div>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 shrink-0" />
