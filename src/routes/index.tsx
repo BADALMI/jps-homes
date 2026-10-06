@@ -336,7 +336,8 @@ function Index() {
             Popular Locations in Lucknow
           </h2>
           <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {locations.map((l) => (
+            {locations.map((l, i) => (
+              <Reveal key={l.name} delay={(i % 4) * 80} className="h-full">
               <a
                 key={l.name}
                 href="#contact"
@@ -346,6 +347,7 @@ function Index() {
                 <p className="mt-3 font-semibold group-hover:text-primary">{l.name}</p>
                 <p className="mt-1 text-xs text-muted-foreground">{l.listings}</p>
               </a>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -358,14 +360,16 @@ function Index() {
           End-to-End Property Services
         </h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <div key={s.title} className="rounded-xl border border-border bg-card p-6">
+          {services.map((s, i) => (
+            <Reveal key={s.title} delay={(i % 4) * 100} className="h-full">
+            <div className="h-full rounded-xl border border-border bg-card p-6">
               <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <s.icon className="h-5 w-5" />
               </div>
               <h3 className="mt-4 font-serif text-lg font-bold">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
             </div>
+            </Reveal>
           ))}
         </div>
       </section>
