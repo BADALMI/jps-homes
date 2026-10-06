@@ -339,9 +339,8 @@ function Index() {
             {locations.map((l, i) => (
               <Reveal key={l.name} delay={(i % 4) * 80} className="h-full">
               <a
-                key={l.name}
                 href="#contact"
-                className="group rounded-xl border border-border bg-card p-5 transition-all hover:border-primary hover:shadow-md"
+                className="group block h-full rounded-xl border border-border bg-card p-5 transition-all hover:border-primary hover:shadow-md"
               >
                 <MapPin className="h-5 w-5 text-primary" />
                 <p className="mt-3 font-semibold group-hover:text-primary">{l.name}</p>
