@@ -20,8 +20,8 @@ export function Reveal({ children, delay = 0, className = "" }: RevealProps) {
       return;
     }
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
           setVisible(true);
           observer.disconnect();
         }
