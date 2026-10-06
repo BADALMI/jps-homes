@@ -20,6 +20,9 @@ import heroImg from "@/assets/hero.jpg";
 import villaImg from "@/assets/project-villa.jpg";
 import towerImg from "@/assets/project-tower.jpg";
 import plotsImg from "@/assets/project-plots.jpg";
+import hazratganjImg from "@/assets/project-hazratganj.jpg";
+import golfCityImg from "@/assets/project-golf-city.jpg";
+import { Reveal } from "@/components/Reveal";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -87,6 +90,28 @@ const projects = [
     beds: null,
     baths: null,
     area: "1,000–2,400 sq.ft",
+  },
+  {
+    name: "JPS Hazratganj Central",
+    location: "Hazratganj, Lucknow",
+    type: "3 & 4 BHK Premium Apartments",
+    price: "₹1.2 Cr onwards",
+    status: "Under Construction",
+    image: hazratganjImg,
+    beds: 3,
+    baths: 3,
+    area: "1,750 sq.ft",
+  },
+  {
+    name: "JPS Golf Greens",
+    location: "Sushant Golf City, Lucknow",
+    type: "Golf-Facing 3 BHK Residences",
+    price: "₹1.35 Cr onwards",
+    status: "New Launch",
+    image: golfCityImg,
+    beds: 3,
+    baths: 3,
+    area: "1,900 sq.ft",
   },
 ];
 
@@ -170,24 +195,30 @@ function Index() {
           <img
             src={heroImg}
             alt="Premium residential community in Lucknow"
-            className="h-full w-full object-cover"
+            className="animate-ken-burns h-full w-full object-cover"
             width={1920}
             height={1088}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
         </div>
         <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 py-28 sm:px-6 md:py-40">
-          <p className="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur">
+          <p className="animate-fade-up mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur">
             <Building2 className="h-3.5 w-3.5" /> Lucknow's Trusted Property Partner
           </p>
-          <h1 className="max-w-2xl font-serif text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
+          <h1
+            className="animate-fade-up max-w-2xl font-serif text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl"
+            style={{ animationDelay: "150ms" }}
+          >
             Find Your Dream Home in the Heart of Lucknow
           </h1>
-          <p className="mt-5 max-w-xl text-base text-white/85 sm:text-lg">
+          <p
+            className="animate-fade-up mt-5 max-w-xl text-base text-white/85 sm:text-lg"
+            style={{ animationDelay: "300ms" }}
+          >
             From premium apartments in Gomti Nagar to gated plots on Faizabad Road — JPS Real
             Estates guides you to the right property with complete transparency.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="animate-fade-up mt-8 flex flex-wrap gap-3" style={{ animationDelay: "450ms" }}>
             <a
               href="#projects"
               className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
@@ -201,7 +232,10 @@ function Index() {
               Talk to Us
             </a>
           </div>
-          <div className="mt-12 grid max-w-lg grid-cols-3 gap-6 text-white">
+          <div
+            className="animate-fade-up mt-12 grid max-w-lg grid-cols-3 gap-6 text-white"
+            style={{ animationDelay: "600ms" }}
+          >
             <div>
               <p className="font-serif text-3xl font-bold">250+</p>
               <p className="text-xs text-white/70">Properties Listed</p>
