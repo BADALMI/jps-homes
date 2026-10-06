@@ -254,6 +254,7 @@ function Index() {
 
       {/* Projects */}
       <section id="projects" className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+        <Reveal>
         <div className="mb-10 flex flex-wrap items-end justify-between gap-4">
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-primary">
@@ -267,8 +268,10 @@ function Index() {
             A curated selection of demo listings across Lucknow's most sought-after neighbourhoods.
           </p>
         </div>
+        </Reveal>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
+            <Reveal key={p.name} delay={(i % 4) * 100} className="h-full">
             <article
               key={p.name}
               className="group overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-lg"
@@ -318,6 +321,7 @@ function Index() {
                 </div>
               </div>
             </article>
+            </Reveal>
           ))}
         </div>
       </section>
