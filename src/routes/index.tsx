@@ -315,11 +315,10 @@ function Index() {
             </a>
             <button
               onClick={() => setAdminOpen(true)}
-              className="flex items-center gap-1.5 rounded-md border border-border p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
-              aria-label="Admin panel"
-              title="Admin"
+              className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-xs font-medium text-muted-foreground transition-all hover:border-primary/50 hover:bg-accent hover:text-primary"
             >
-              <Lock className="h-4 w-4" />
+              <Lock className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">Admin</span>
             </button>
           </div>
         </div>
@@ -347,48 +346,49 @@ function Index() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20" />
         </div>
-        <div className="relative mx-auto flex max-w-7xl flex-col justify-center px-4 py-28 sm:px-6 md:py-40">
-          <p className="animate-fade-up mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur">
-            <Building2 className="h-3.5 w-3.5" /> Lucknow's Trusted Property Partner
-          </p>
-          <h1
-            className="animate-fade-up max-w-2xl font-serif text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl"
-            style={{ animationDelay: "150ms" }}
-          >
-            Find Your Dream Home in the Heart of Lucknow
-          </h1>
-          <p
-            className="animate-fade-up mt-5 max-w-xl text-base text-white/85 sm:text-lg"
-            style={{ animationDelay: "300ms" }}
-          >
-            From premium apartments in Gomti Nagar to gated plots on Faizabad Road — JPS Real
-            Estates guides you to the right property with complete transparency.
-          </p>
-          <div
-            className="animate-fade-up mt-8 flex flex-wrap gap-3"
-            style={{ animationDelay: "450ms" }}
-          >
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        <div className="relative mx-auto flex max-w-7xl flex-col justify-center gap-12 px-4 py-28 sm:px-6 md:py-36 lg:flex-row lg:items-center">
+          {/* Left: headline + CTAs */}
+          <div className="flex-1">
+            <p className="animate-fade-up mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-white/30 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white backdrop-blur">
+              <Building2 className="h-3.5 w-3.5" /> Lucknow's Trusted Property Partner
+            </p>
+            <h1
+              className="animate-fade-up max-w-2xl font-serif text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl"
+              style={{ animationDelay: "150ms" }}
             >
-              Explore Projects <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
+              Find Your Dream Home in the Heart of Lucknow
+            </h1>
+            <p
+              className="animate-fade-up mt-5 max-w-xl text-base text-white/85 sm:text-lg"
+              style={{ animationDelay: "300ms" }}
             >
-              Talk to Us
-            </a>
+              From premium apartments in Gomti Nagar to gated plots on Faizabad Road — JPS Real
+              Estates guides you to the right property with complete transparency.
+            </p>
+            <div
+              className="animate-fade-up mt-8 flex flex-wrap gap-3"
+              style={{ animationDelay: "450ms" }}
+            >
+              <a
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                Explore Projects <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 rounded-md border border-white/40 bg-white/10 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/20"
+              >
+                Talk to Us
+              </a>
+            </div>
           </div>
-          {/* Quick lead capture */}
+
+          {/* Right: lead capture card */}
           <div
-            className="animate-fade-up mt-10 w-full max-w-2xl"
+            className="animate-fade-up w-full max-w-sm shrink-0 lg:max-w-md"
             style={{ animationDelay: "600ms" }}
           >
-            <p className="mb-2.5 text-xs font-semibold uppercase tracking-widest text-white/70">
-              Get a callback in 24 hours
-            </p>
             <LeadForm variant="hero" onSubmit={(d) => addLead({ ...d, source: "hero" })} />
           </div>
         </div>
