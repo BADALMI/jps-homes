@@ -153,6 +153,16 @@ const projects = [
     image: golfCityImg,
   },
   {
+    name: "Omaxe The Resort",
+    developer: "Omaxe",
+    location: "Gomti Nagar Extension, Lucknow",
+    type: "3 & 4 BHK residences · penthouses",
+    rera: "UPRERAPRJ326163 · under construction",
+    price: "₹2.79 Cr onwards*",
+    source: "https://www.omaxe.com/residential-property-in-lucknow/the-resort-1",
+    image: villaImg,
+  },
+  {
     name: "Hazratganj Residency",
     developer: "Omaxe",
     location: "Gomti Nagar Extension, Lucknow",
@@ -347,7 +357,7 @@ function Index() {
               Featured Projects
             </p>
             <h2 className="mt-2 font-serif text-3xl font-bold sm:text-4xl">
-              Homes & Plots Worth Owning
+              Lucknow Projects to Explore
             </h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
