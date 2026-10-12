@@ -324,15 +324,13 @@ function Index() {
         </div>
       </header>
 
-      {ready && (
-        <AdminPanel
-          open={adminOpen}
-          onClose={() => setAdminOpen(false)}
-          leads={leads}
-          onDelete={deleteLead}
-          onClearAll={clearAll}
-        />
-      )}
+      <AdminPanel
+        open={adminOpen}
+        onClose={() => setAdminOpen(false)}
+        leads={leads}
+        onDelete={deleteLead}
+        onClearAll={clearAll}
+      />
 
       {/* Hero */}
       <section id="top" className="relative">
