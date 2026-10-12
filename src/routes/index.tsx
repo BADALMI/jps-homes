@@ -218,14 +218,14 @@ const projects = [
 ];
 
 const locations = [
-  { name: "Gomti Nagar", listings: "45+ properties" },
-  { name: "Gomti Nagar Extension", listings: "60+ properties" },
-  { name: "Hazratganj", listings: "20+ properties" },
-  { name: "Indira Nagar", listings: "35+ properties" },
-  { name: "Aliganj", listings: "25+ properties" },
-  { name: "Sushant Golf City", listings: "40+ properties" },
-  { name: "Shaheed Path", listings: "30+ properties" },
-  { name: "Faizabad Road", listings: "28+ properties" },
+  { name: "Gomti Nagar" },
+  { name: "Gomti Nagar Extension" },
+  { name: "Hazratganj" },
+  { name: "Indira Nagar" },
+  { name: "Aliganj" },
+  { name: "Sushant Golf City" },
+  { name: "Shaheed Path" },
+  { name: "Faizabad Road" },
 ];
 
 const services = [
@@ -334,23 +334,6 @@ function Index() {
               Talk to Us
             </a>
           </div>
-          <div
-            className="animate-fade-up mt-12 grid max-w-lg grid-cols-3 gap-6 text-white"
-            style={{ animationDelay: "600ms" }}
-          >
-            <div>
-              <p className="font-serif text-3xl font-bold">250+</p>
-              <p className="text-xs text-white/70">Properties Listed</p>
-            </div>
-            <div>
-              <p className="font-serif text-3xl font-bold">15+</p>
-              <p className="text-xs text-white/70">Years of Trust</p>
-            </div>
-            <div>
-              <p className="font-serif text-3xl font-bold">500+</p>
-              <p className="text-xs text-white/70">Happy Families</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -440,7 +423,7 @@ function Index() {
               >
                 <MapPin className="h-5 w-5 text-primary" />
                 <p className="mt-3 font-semibold group-hover:text-primary">{l.name}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{l.listings}</p>
+                <p className="mt-1 text-xs text-muted-foreground">Lucknow</p>
               </a>
               </Reveal>
             ))}
