@@ -1,16 +1,6 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Building2,
-  Home,
-  Landmark,
-  ShieldCheck,
-  KeyRound,
-  Handshake,
-  ArrowRight,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Building2, Hop as Home, Landmark, ShieldCheck, KeyRound, Handshake, ArrowRight, Lock } from "lucide-react";
 
 import logoAsset from "@/assets/jps-logo.jpeg";
 import heroImg from "@/assets/hero.jpg";
@@ -20,6 +10,9 @@ import plotsImg from "@/assets/project-plots.jpg";
 import hazratganjImg from "@/assets/project-hazratganj.jpg";
 import golfCityImg from "@/assets/project-golf-city.jpg";
 import { Reveal } from "@/components/Reveal";
+import { LeadForm } from "@/components/LeadForm";
+import { AdminPanel } from "@/components/AdminPanel";
+import { useLeads } from "@/hooks/use-leads";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -268,6 +261,9 @@ const services = [
 ];
 
 function Index() {
+  const { leads, addLead, deleteLead, clearAll, ready } = useLeads();
+  const [adminOpen, setAdminOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
@@ -310,14 +306,34 @@ function Index() {
               Contact
             </a>
           </nav>
-          <a
-            href="#contact"
-            className="hidden rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:inline-flex"
-          >
-            Book a Visit
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="#contact"
+              className="hidden rounded-md bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90 sm:inline-flex"
+            >
+              Book a Visit
+            </a>
+            <button
+              onClick={() => setAdminOpen(true)}
+              className="flex items-center gap-1.5 rounded-md border border-border p-2 text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+              aria-label="Admin panel"
+              title="Admin"
+            >
+              <Lock className="h-4 w-4" />
+            </button>
+          </div>
         </div>
       </header>
+
+      {ready && (
+        <AdminPanel
+          open={adminOpen}
+          onClose={() => setAdminOpen(false)}
+          leads={leads}
+          onDelete={deleteLead}
+          onClearAll={clearAll}
+        />
+      )}
 
       {/* Hero */}
       <section id="top" className="relative">
@@ -364,6 +380,16 @@ function Index() {
             >
               Talk to Us
             </a>
+          </div>
+          {/* Quick lead capture */}
+          <div
+            className="animate-fade-up mt-10 w-full max-w-2xl"
+            style={{ animationDelay: "600ms" }}
+          >
+            <p className="mb-2.5 text-xs font-semibold uppercase tracking-widest text-white/70">
+              Get a callback in 24 hours
+            </p>
+            <LeadForm variant="hero" onSubmit={(d) => addLead({ ...d, source: "hero" })} />
           </div>
         </div>
       </section>
@@ -533,50 +559,10 @@ function Index() {
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <form
-              className="rounded-xl bg-background p-6 text-foreground shadow-xl sm:p-8"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <h3 className="font-serif text-xl font-bold">Request a Callback</h3>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Share your details and we will reach out within a day.
-              </p>
-              <div className="mt-6 space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your name"
-                  className="w-full rounded-md border border-input bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
-                />
-                <input
-                  type="tel"
-                  placeholder="Phone number"
-                  className="w-full rounded-md border border-input bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
-                />
-                <select
-                  className="w-full rounded-md border border-input bg-background px-4 py-2.5 text-sm text-muted-foreground outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
-                  defaultValue=""
-                >
-                  <option value="" disabled>
-                    I'm interested in…
-                  </option>
-                  <option>Buying a home</option>
-                  <option>Selling a property</option>
-                  <option>Investing in plots</option>
-                  <option>Renting</option>
-                </select>
-                <textarea
-                  placeholder="Message (optional)"
-                  rows={3}
-                  className="w-full rounded-md border border-input bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
-                />
-                <button
-                  type="submit"
-                  className="w-full rounded-md bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                  Request Callback
-                </button>
-              </div>
-            </form>
+            <LeadForm
+              variant="contact"
+              onSubmit={(d) => addLead({ ...d, source: "contact" })}
+            />
           </Reveal>
         </div>
       </section>
