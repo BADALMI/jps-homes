@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { MapPin, Phone, Mail, Building2, Hop as Home, Landmark, ShieldCheck, KeyRound, Handshake, ArrowRight, Lock } from "lucide-react";
 
 import logoAsset from "@/assets/jps-logo.jpeg";
@@ -11,7 +10,6 @@ import hazratganjImg from "@/assets/project-hazratganj.jpg";
 import golfCityImg from "@/assets/project-golf-city.jpg";
 import { Reveal } from "@/components/Reveal";
 import { LeadForm } from "@/components/LeadForm";
-import { AdminPanel } from "@/components/AdminPanel";
 import { useLeads } from "@/hooks/use-leads";
 
 export const Route = createFileRoute("/")({
@@ -261,8 +259,7 @@ const services = [
 ];
 
 function Index() {
-  const { leads, addLead, deleteLead, clearAll, ready } = useLeads();
-  const [adminOpen, setAdminOpen] = useState(false);
+  const { addLead } = useLeads();
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -313,24 +310,16 @@ function Index() {
             >
               Book a Visit
             </a>
-            <button
-              onClick={() => setAdminOpen(true)}
+            <Link
+              to="/admin"
               className="inline-flex items-center gap-1.5 rounded-md border border-border bg-background px-3 py-2 text-xs font-medium text-muted-foreground transition-all hover:border-primary/50 hover:bg-accent hover:text-primary"
             >
               <Lock className="h-3.5 w-3.5" />
               <span className="hidden sm:inline">Admin</span>
-            </button>
+            </Link>
           </div>
         </div>
       </header>
-
-      <AdminPanel
-        open={adminOpen}
-        onClose={() => setAdminOpen(false)}
-        leads={leads}
-        onDelete={deleteLead}
-        onClearAll={clearAll}
-      />
 
       {/* Hero */}
       <section id="top" className="relative">
