@@ -176,6 +176,7 @@ const projects = [
     location: "Kalli Pashchim, Raebareli Road, Lucknow",
     type: "2 BHK + study to 4 BHK + servant",
     rera: "UPRERAPRJ344049/7/2024 · UPRERAPRJ166763/8/2024",
+    price: "₹87 lakh onwards*",
     source: "https://www.omaxe.com/residential-property-in-lucknow/cassia",
     image: towerImg,
   },
@@ -202,7 +203,7 @@ const projects = [
     developer: "Rishita Developers",
     location: "Sushant Golf City, Lucknow",
     type: "2 & 3 BHK apartments",
-    rera: "Multiple phases · confirm unit-specific registration",
+    rera: "Phases 1, 3 & 4: UPRERAPRJ357829 · UPRERAPRJ308470 · UPRERAPRJ192087",
     source: "https://www.rishitagroup.in/rishita-mulberry-heights/",
     image: golfCityImg,
   },
@@ -350,12 +351,12 @@ function Index() {
             </h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-              Browse developments from Lucknow builders. Prices and current availability are confirmed on enquiry.
+              Browse developments from Lucknow builders. Ask JPS to confirm current availability and pricing.
           </p>
         </div>
         </Reveal>
         <p className="mb-8 max-w-4xl border-l-2 border-primary pl-4 text-xs leading-relaxed text-muted-foreground">
-          Project details are summarized from developer and public RERA listings. Registrations and possession timelines can vary by phase. Photos are illustrative, not project-specific.
+          Project details are summarized from developer, public RERA, and property-listing sources. Registrations and possession timelines can vary by phase. Photos are illustrative, not project-specific. *Price shown is the developer-listed starting price; confirm the current offer.
         </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((p, i) => (
@@ -388,7 +389,7 @@ function Index() {
                 <p className="mt-2 text-sm font-medium">{p.type}</p>
                 <p className="mt-3 min-h-9 text-xs text-muted-foreground">{p.rera}</p>
                 <div className="mt-4 flex items-center justify-between gap-3 border-t border-border pt-4">
-                  <p className="font-serif text-base font-bold text-primary">Price on request</p>
+                  <p className="font-serif text-base font-bold text-primary">{p.price ?? "Price on request"}</p>
                   <a
                     href={p.source}
                     target="_blank"
