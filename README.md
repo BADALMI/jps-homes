@@ -3,6 +3,7 @@
 I want a real estate site for JPS Real Estates (JPS Associate).
 
 Contact & Location Details:
+
 - Jitendra Pratap Singh
 - 3/104 Viram Khand, Gomti Nagar, Lucknow
 - Logo attached
