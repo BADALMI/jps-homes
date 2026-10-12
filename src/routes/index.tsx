@@ -10,9 +10,6 @@ import {
   KeyRound,
   Handshake,
   ArrowRight,
-  BedDouble,
-  Bath,
-  Ruler,
 } from "lucide-react";
 
 import logoAsset from "@/assets/jps-logo.jpeg.asset.json";
@@ -48,70 +45,175 @@ export const Route = createFileRoute("/")({
 
 const projects = [
   {
-    name: "JPS Palm Residences",
-    location: "Gomti Nagar Extension, Lucknow",
-    type: "3 & 4 BHK Apartments",
-    price: "₹85 L onwards",
-    status: "Ready to Move",
-    image: heroImg,
-    beds: 3,
-    baths: 3,
-    area: "1,650 sq.ft",
-  },
-  {
-    name: "JPS Signature Villas",
-    location: "Sultanpur Road, Lucknow",
-    type: "Luxury Independent Villas",
-    price: "₹1.6 Cr onwards",
-    status: "Under Construction",
-    image: villaImg,
-    beds: 4,
-    baths: 4,
-    area: "2,800 sq.ft",
-  },
-  {
-    name: "JPS Skyline Tower",
-    location: "Shaheed Path, Lucknow",
-    type: "2 & 3 BHK High-Rise",
-    price: "₹62 L onwards",
-    status: "New Launch",
-    image: towerImg,
-    beds: 2,
-    baths: 2,
-    area: "1,150 sq.ft",
-  },
-  {
-    name: "JPS Green Valley Plots",
-    location: "Faizabad Road, Lucknow",
-    type: "Gated Residential Plots",
-    price: "₹38 L onwards",
-    status: "Ready to Move",
-    image: plotsImg,
-    beds: null,
-    baths: null,
-    area: "1,000–2,400 sq.ft",
-  },
-  {
-    name: "JPS Hazratganj Central",
-    location: "Hazratganj, Lucknow",
-    type: "3 & 4 BHK Premium Apartments",
-    price: "₹1.2 Cr onwards",
-    status: "Under Construction",
-    image: hazratganjImg,
-    beds: 3,
-    baths: 3,
-    area: "1,750 sq.ft",
-  },
-  {
-    name: "JPS Golf Greens",
+    name: "Palm Ville",
+    developer: "Ansal API",
     location: "Sushant Golf City, Lucknow",
-    type: "Golf-Facing 3 BHK Residences",
-    price: "₹1.35 Cr onwards",
-    status: "New Launch",
+    type: "4 BHK villas",
+    rera: "Phase details to confirm",
+    source: "https://www.squareyards.com/lucknow-residential-property/ansal-api-palm-ville/48120/project",
+    image: heroImg,
+  },
+  {
+    name: "Akanksha Enclave",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential · configuration to confirm",
+    rera: "Confirm phase registration",
+    source: "https://www.thirdvendor.com/portfolio/ansal-api-akansha-enclave/",
+    image: villaImg,
+  },
+  {
+    name: "Serene Lakeview",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential · configuration to confirm",
+    rera: "Confirm phase registration",
+    source: "https://www.rathiglobalrealty.com/ansal-serene-lakeview",
+    image: towerImg,
+  },
+  {
+    name: "Larchwood Villa",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Villas · configuration to confirm",
+    rera: "Confirm phase registration",
+    source: "https://www.commonfloor.com/ansal-larchwood-villa-lucknow/povp-ulllx2",
+    image: plotsImg,
+  },
+  {
+    name: "Golf Vista",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential apartments",
+    rera: "UPRERAPRJ5801 · verify current phase status",
+    source: "https://www.up-rera.in/Projectsummary?IRSAHEB=D6PY3lyims8%3D&NPJ6RAme=1l4uItwMl94ChAP0nf31obwy1fcMcSdxxF+cP+ndQvY%3D&PaURJEMAN4=ZL9MNERkNdaYwfeqOz9YrnA%3D%3D&UI0aPA1ISD=leZx60cJ64c%3D&hfFlag=GL34ZTSSjlw%3D",
+    image: hazratganjImg,
+  },
+  {
+    name: "Golf Gateway",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential apartments",
+    rera: "UPRERAPRJ3331 · verify current phase status",
+    source: "https://uprera.azurewebsites.net/Frm_View_Project_Details.aspx?id=3331",
     image: golfCityImg,
-    beds: 3,
-    baths: 3,
-    area: "1,900 sq.ft",
+  },
+  {
+    name: "Bliss Delight",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential apartments",
+    rera: "UPRERAPRJ4754 · confirm current status",
+    source: "https://up-rera.in/Projectsummary?IRSAHEB=D6PY3lyims8%3D&NPJ6RAme=52tIwuAdn9%2F6vXVGQZ6np%2FLeIkAsf+Fnp%2FYvBsTFqJEETF5W+2eLWN7gLgx3xQ88hipm7PcEykU%3D&PaURJEMAN4=ZL9MNERkNda4UBBTeO5eHg%3D%3D&UI0aPA1ISD=DI6FN+4ZEbA%3D",
+    image: heroImg,
+  },
+  {
+    name: "Basera Enclave",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential apartments · configuration to confirm",
+    rera: "Confirm phase registration",
+    source: "https://houssed.com/lucknow/ansal-api/ansal-basera-enclave-4835",
+    image: villaImg,
+  },
+  {
+    name: "Celebrity Greens",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential apartments",
+    rera: "UPRERAPRJ8838 / UPRERAPRJ3405 · check phase",
+    source: "https://up-rera.in/Projectsummary?hfFlag=GL34ZTSSjlw%3D&IRSAHEB=D6PY3lyims8%3D&NPJ6RAme=qrx0mMaBZuSz3VsqG+HCRO4CrrfGAPph86TpaHgFZma8DIDpFsikfPYJW2VbbhRd%2Fl%2FsLHF%2Fphg%3D&PaURJEMAN4=ZL9MNERkNdbf2+oZ7dp03A%3D%3D&UI0aPA1ISD=diQlR%2FG5Zbo%3D",
+    image: towerImg,
+  },
+  {
+    name: "Celebrity Meadows",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Residential apartments",
+    rera: "UPRERAPRJ3206 / UPRERAPRJ5602 · check phase",
+    source: "https://www.up-rera.in/Projectsummary?hfFlag=GL34ZTSSjlw%3D&IRSAHEB=D6PY3lyims8%3D&NPJ6RAme=qrx0mMaBZuSz3VsqG+HCRFbIz1d5sNBPUb%2FwA8f1%2Fx3eptFuIt1xLRIfKO%2FedoLs0PdEO4zsm+4%3D&PaURJEMAN4=ZL9MNERkNda4UBBTeO5eHg%3D%3D&UI0aPA1ISD=nXEuIrMYSvQ%3D",
+    image: plotsImg,
+  },
+  {
+    name: "Ansal Business Park 2",
+    developer: "Ansal API",
+    location: "Sushant Golf City, Lucknow",
+    type: "Commercial development",
+    rera: "Confirm registration and current status",
+    source: "https://ayanaprop.tech/rera-lucknow/ansal-projects/",
+    image: hazratganjImg,
+  },
+  {
+    name: "Omaxe Waterscapes",
+    developer: "Omaxe",
+    location: "Gomti Nagar Extension, Lucknow",
+    type: "3 BHK · 3 BHK + servant",
+    rera: "UPRERAPRJ1538 / UPRERAPRJ1263",
+    source: "https://www.omaxe.com/residential-property-in-lucknow/omaxe-waterscapes",
+    image: golfCityImg,
+  },
+  {
+    name: "Hazratganj Residency",
+    developer: "Omaxe",
+    location: "Gomti Nagar Extension, Lucknow",
+    type: "1, 2 & 3 BHK · penthouses",
+    rera: "UPRERAPRJ2050",
+    source: "https://www.omaxe.com/residential-property-in-lucknow/hazratganj-residency",
+    image: hazratganjImg,
+  },
+  {
+    name: "Omaxe Residency II",
+    developer: "Omaxe",
+    location: "Gomti Nagar Extension, Lucknow",
+    type: "2 & 3 BHK · 3 BHK + servant",
+    rera: "UPRERAPRJ1682 / UPRERAPRJ1720 / UPRERAPRJ368818",
+    source: "https://www.omaxe.com/residential-property-in-lucknow/omaxe-residency-ii",
+    image: villaImg,
+  },
+  {
+    name: "Omaxe Metro City · Cassia",
+    developer: "Omaxe",
+    location: "Kalli Pashchim, Raebareli Road, Lucknow",
+    type: "2 BHK + study to 4 BHK + servant",
+    rera: "UPRERAPRJ344049/7/2024 · UPRERAPRJ166763/8/2024",
+    source: "https://www.omaxe.com/residential-property-in-lucknow/cassia",
+    image: towerImg,
+  },
+  {
+    name: "Gomti Greens",
+    developer: "Emaar India",
+    location: "Gomti Nagar Extension, Lucknow",
+    type: "Residential plots",
+    rera: "UPRERAPRJ5635 · integrated township",
+    source: "https://in.emaar.com/en/properties/gomti-greens-plots/",
+    image: plotsImg,
+  },
+  {
+    name: "Elite Oasis",
+    developer: "Emaar India",
+    location: "Gomti Greens, Sector 7, Lucknow",
+    type: "3 & 4 BHK residences",
+    rera: "UPRERAPRJ944123/02/2025",
+    source: "https://in.emaar.com/en/properties/elite-oasis/",
+    image: heroImg,
+  },
+  {
+    name: "Rishita Mulberry Heights",
+    developer: "Rishita Developers",
+    location: "Sushant Golf City, Lucknow",
+    type: "2 & 3 BHK apartments",
+    rera: "Multiple phases · confirm unit-specific registration",
+    source: "https://www.rishitagroup.in/rishita-mulberry-heights/",
+    image: golfCityImg,
+  },
+  {
+    name: "Gomti Green City",
+    developer: "Shree Raj Infrahousing",
+    location: "Kisan Path, near New Jail Road, Lucknow",
+    type: "Residential plots",
+    rera: "UPRERAPRJ17806",
+    source: "https://www.shreerajinfra.com/gomti-green-city/",
+    image: plotsImg,
   },
 ];
 
@@ -265,10 +367,13 @@ function Index() {
             </h2>
           </div>
           <p className="max-w-md text-sm text-muted-foreground">
-            A curated selection of demo listings across Lucknow's most sought-after neighbourhoods.
+              Browse developments from Lucknow builders. Prices and current availability are confirmed on enquiry.
           </p>
         </div>
         </Reveal>
+        <p className="mb-8 max-w-4xl border-l-2 border-primary pl-4 text-xs leading-relaxed text-muted-foreground">
+          Project details are summarized from developer and public RERA listings. Registrations and possession timelines can vary by phase. Photos are illustrative, not project-specific.
+        </p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {projects.map((p, i) => (
             <Reveal key={p.name} delay={(i % 4) * 100} className="h-full">
@@ -286,7 +391,10 @@ function Index() {
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <span className="absolute left-3 top-3 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold text-primary-foreground">
-                  {p.status}
+                  {p.developer}
+                </span>
+                <span className="absolute bottom-3 right-3 rounded bg-background/90 px-2 py-1 text-[10px] font-medium text-foreground">
+                  Illustrative photo
                 </span>
               </div>
               <div className="p-5">
@@ -295,28 +403,16 @@ function Index() {
                   <MapPin className="h-3.5 w-3.5 text-primary" /> {p.location}
                 </p>
                 <p className="mt-2 text-sm font-medium">{p.type}</p>
-                <div className="mt-3 flex items-center gap-4 text-xs text-muted-foreground">
-                  {p.beds && (
-                    <span className="flex items-center gap-1">
-                      <BedDouble className="h-3.5 w-3.5" /> {p.beds} Beds
-                    </span>
-                  )}
-                  {p.baths && (
-                    <span className="flex items-center gap-1">
-                      <Bath className="h-3.5 w-3.5" /> {p.baths} Baths
-                    </span>
-                  )}
-                  <span className="flex items-center gap-1">
-                    <Ruler className="h-3.5 w-3.5" /> {p.area}
-                  </span>
-                </div>
-                <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
-                  <p className="font-serif text-base font-bold text-primary">{p.price}</p>
+                <p className="mt-3 min-h-9 text-xs text-muted-foreground">{p.rera}</p>
+                <div className="mt-4 flex items-center justify-between gap-3 border-t border-border pt-4">
+                  <p className="font-serif text-base font-bold text-primary">Price on request</p>
                   <a
-                    href="#contact"
+                    href={p.source}
+                    target="_blank"
+                    rel="noreferrer"
                     className="text-xs font-semibold text-primary hover:underline"
                   >
-                    Enquire →
+                    Project details ↗
                   </a>
                 </div>
               </div>
